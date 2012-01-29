@@ -1,8 +1,8 @@
-# Awkward Showcase – A jQuery Plugin
+# Awkward Showcase - A jQuery Plugin
 
 Awkward Showcase is a plugin for the JavaScript Framework [jQuery](http://jquery.com). We call it a Content Slider. But it can do more then just slide the content. For example you can add tooltips, enable thumbnails, activate dynamic height and lots more.
 
-Since version 1.0 it’s integrated with our Viewline Plugin enabling new innovative ways for displaying content on your website.
+Since version 1.0 it's integrated with our Viewline Plugin enabling new innovative ways for displaying content on your website.
 
 ## Some Nice Features
 **Compatibility**
@@ -30,7 +30,7 @@ Enabling the showcase to change height based on content.
 The showcase i easy to implement and very easy to customize in CSS.
 
 **Lots more**
-A slide can contain any type of HTML element. It’s an infinity slide. Etc.
+A slide can contain any type of HTML element. It's an infinity slide. Etc.
 
 ## Implementation Example
 
@@ -209,7 +209,7 @@ A slide can contain any type of HTML element. It’s an infinity slide. Etc.
 	<tr>
 		<td>transition:</td>
 		<td>vslide</td>
-		<td>‘vslide’, ‘hslide’ or ‘fade’</td>
+		<td>'vslide', 'hslide' or 'fade'</td>
 	</tr>
 	<tr>
 		<td>transition_delay:</td>
@@ -224,7 +224,7 @@ A slide can contain any type of HTML element. It’s an infinity slide. Etc.
 	<tr>
 		<td>show_caption:</td>
 		<td>onload</td>
-		<td>‘onload’, ‘onhover’ or ‘show’</td>
+		<td>'onload', 'onhover' or 'show'</td>
 	</tr>
 	<tr>
 		<td>thumbnails:</td>
@@ -234,12 +234,12 @@ A slide can contain any type of HTML element. It’s an infinity slide. Etc.
 	<tr>
 		<td>thumbnails_position:</td>
 		<td>outside-last</td>
-		<td>‘outside-last’, ‘outside-first’, ‘inside-last’ or ‘inside-first’</td>
+		<td>'outside-last', 'outside-first', 'inside-last' or 'inside-first'</td>
 	</tr>
 	<tr>
 		<td>thumbnails_direction:</td>
 		<td>vertical</td>
-		<td>‘vertical’ or ‘horizontal’</td>
+		<td>'vertical' or 'horizontal'</td>
 	</tr>
 	<tr>
 		<td>thumbnails_slidex:</td>
