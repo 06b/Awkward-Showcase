@@ -5,7 +5,7 @@ http://www.jquery.com
 http://www.awkwardgroup.com/sandbox/awkward-showcase-a-jquery-plugin
 http://demo.awkwardgroup.com/showcase
 
-Version: 1.2.0
+Version: 1.2.1
 Copyright (c) 2012 Adrian D. Alvarez (http://www.adriandalvarez.com)
 
 This file is originally by the following & was forked from Version:1.1.1  
@@ -96,7 +96,7 @@ http://creativecommons.org/licenses/by-sa/3.0/
 		    viewline: false, /* If set to true content_width, thumbnails, transition and dynamic_height will be disabled. As for dynamic height you need to set the width and height of images in the source. */
 		    fullscreen_width_x: 15,
 		    custom_function: null, /* Custom Function is called only on first load */
-		    custom_transition: null /* Custom Function that runs on every transition - Should be the name of a function in the type of a string. Example:'swapPhases' for function swapPhases() */
+		    custom_slide_function: null /* Custom Function that runs on every slide change - Should be the name of a function in the type of a string. Example:'swapPhases' for function swapPhases() */
 
 		};
 
@@ -529,41 +529,41 @@ http://creativecommons.org/licenses/by-sa/3.0/
 				.css('position', 'absolute')
 				.addClass('showcase-content')
 				.html(contentArray[id]);
-			
-			// Set content width
-			if (!options.viewline) { new_content.css('width', options.content_width); }
-			
-			// Position the content wrapper if showcase width is set to hundred percent
-			if (options.fit_to_parent && !options.viewline) { new_content.css('left', (showcase_width/2)-options.content_width/2); }
-			
-			return new_content;
-		}
-		
-		// Function that runs when content is set to change automatically
-		function autoChange() {
-		
-			// Set next content id
-			var nextID = parseInt(current_id)+1;
-			// If the next id is outside the array and continuous is set to true set the id to 0
-			if (nextID === content_count && options.continuous) { nextID = 0; }
-			// If continuous is set to false break the auto change
-			else if (nextID === content_count && !options.continuous) { break_loop = true; clearInterval(myInterval); }
-			// Don't change the content if the auto change is broken
-			if (!break_loop) { changeContent(nextID, 'next'); }
-		}
-		
-		// Changes the content (no explanation/comments needed :)
-		function changeContent(id, direction) {
-			
-            // A function that runs on every transition, if it exists.
-            if ((options.custom_transition === null) || (/^\s*$/.test(options.custom_transition))) {
+
+            // Set content width
+            if (!options.viewline) { new_content.css('width', options.content_width); }
+
+            // Position the content wrapper if showcase width is set to hundred percent
+            if (options.fit_to_parent && !options.viewline) { new_content.css('left', (showcase_width / 2) - options.content_width / 2); }
+
+            return new_content;
+        }
+
+        // Function that runs when content is set to change automatically
+        function autoChange() {
+
+            // Set next content id
+            var nextID = parseInt(current_id) + 1;
+            // If the next id is outside the array and continuous is set to true set the id to 0
+            if (nextID === content_count && options.continuous) { nextID = 0; }
+            // If continuous is set to false break the auto change
+            else if (nextID === content_count && !options.continuous) { break_loop = true; clearInterval(myInterval); }
+            // Don't change the content if the auto change is broken
+            if (!break_loop) { changeContent(nextID, 'next'); }
+        }
+
+        // Changes the content (no explanation/comments needed :)
+        function changeContent(id, direction) {
+
+            // A function that runs on every slide change, if it exists.
+            if ((options.custom_slide_function === null) || (/^\s*$/.test(options.custom_slide_function))) {
                 // String is blank, null or undefined. Carry On.
             }
             else {
-                var fn = window[options.custom_transition];
+                var fn = window[options.custom_slide_function];
                 // Check if the custom transition can work as a function
                 if (typeof fn === 'function') {
-                    fn(options.custom_transition);
+                    fn(options.custom_slide_function);
                 }
             }
 
