@@ -5,7 +5,7 @@ http://www.jquery.com
 http://www.awkwardgroup.com/sandbox/awkward-showcase-a-jquery-plugin
 http://demo.awkwardgroup.com/showcase
 
-Version: 1.2.2
+Version: 1.3.0
 Copyright (c) 2012 Adrian D. Alvarez (http://www.adriandalvarez.com)
 
 This file is originally by the following & was forked from Version:1.1.1  
@@ -94,6 +94,7 @@ Markup example for jQuery("#showcase").awShowcase();
 		    dynamic_height: false, /* For dynamic height to work in webkit you need to set the width and height of images in the source. Usually works to only set the dimension of the first slide in the showcase. */
 		    speed_change: false, /* This prevents user from swithing more then one slide at once */
 		    viewline: false, /* If set to true content_width, thumbnails, transition and dynamic_height will be disabled. As for dynamic height you need to set the width and height of images in the source. */
+		    start_at: 0, /* Allows to be able to start the gallery at a particular slide. */
 		    fullscreen_width_x: 15,
 		    custom_function: null, /* Custom Function is called only on first load */
 		    custom_slide_function: null /* Custom Function that runs on every slide change - Should be the name of a function in the type of a string. Example:'swapPhases' for function swapPhases() */
@@ -1072,6 +1073,11 @@ Markup example for jQuery("#showcase").awShowcase();
 
             // Print the coordinates
             content_container.mousemove(function (e) { mousetrace.html('X: ' + (e.pageX - offset.left) + ' Y: ' + (e.pageY - offset.top)); });
+        }
+
+        // Start at a particular slide
+        if (options.start_at) {
+            changeContent(options.start_at);
         }
 
         // Show all content on one page

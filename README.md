@@ -262,6 +262,11 @@ A slide can contain any type of HTML element. It's an infinity slide. Etc.
 		<td> </td>
 	</tr>
 	<tr>
+		<td>start_at:</td>
+		<td>0</td>
+		<td> </td>
+	</tr>
+	<tr>
 		<td>custom_function</td>
 		<td>null</td>
 		<td> </td>
