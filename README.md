@@ -1,3 +1,6 @@
+#Please Read
+This is a fork from [Awkward Group's repo on BitBucket](http://bitbucket.org/awkwardgroup/awkward-showcase). They are the creators of the plugin & are who are supporting it. If you decide to use my fork (that's cool but) you are on your own as far as support goes. (Sorry, I might try to help once in a while but I can't make any promises.) 
+
 # Awkward Showcase - A jQuery Plugin
 
 Awkward Showcase is a plugin for the JavaScript Framework [jQuery](http://jquery.com). We call it a Content Slider. But it can do more then just slide the content. For example you can add tooltips, enable thumbnails, activate dynamic height and lots more.
